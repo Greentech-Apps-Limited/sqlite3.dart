@@ -6,6 +6,7 @@ buildscript {
         mavenLocal()
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
 
     dependencies {
@@ -16,7 +17,7 @@ buildscript {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 32
+    compileSdkVersion 34
 
     // Conditional for compatibility with AGP <4.2.
     if (project.android.hasProperty("namespace")) {
@@ -32,5 +33,6 @@ android {
 }
 
 dependencies {
-    implementation 'eu.simonbinder:sqlite3-native-library:3.45.3+1'
+    implementation 'androidx.sqlite:sqlite:2.2.0'
+    implementation 'com.github.requery:sqlite-android:3.45.0'
 }
